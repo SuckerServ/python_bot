@@ -2,7 +2,7 @@ irc_nickname = 'Suckerbot'
 
 irc_identity = {
     'gamesurge': {
-        'host': 'irc.gamesurge.net',
+        'host': '195.8.250.180',
         'port': 6667,
         'channels': (
             '#suckerserv',
