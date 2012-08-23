@@ -34,7 +34,7 @@ def f(server_write, args, nickname, **_):
 			end\
 			\
 			\
-			''' % args, nickname)
+			''' % (args.split()[0],args.split()[1]))
 server['kick'] = f
 
 def f(server_write, args, **_):
