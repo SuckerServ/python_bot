@@ -203,3 +203,9 @@ def f(server_write, args, **_):
 			code:server.reloadscripts(1)\
 			''')
 server['reload'] = f		
+
+def f(server_write, args, **_):
+    server_write('''\
+                        code:server.clearbans()\
+                        ''')
+server['clearbans'] = f
