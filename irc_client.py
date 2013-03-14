@@ -38,6 +38,8 @@ class HMIRCClient(irc.IRCClient):
 
     def signedOn(self):
         self.lineRate = self.factory.controller.irc_identity.get('line_rate')
+        if self.factory.controller.irc_identity['nickserv']['service_name'] and self.factory.controller.irc_identity['nickserv']['password']:
+            self.msg(self.factory.controller.irc_identity['nickserv']['service_name'], 'IDENTIFY %s' % self.factory.controller.irc_identity['nickserv']['password'])
         for i in self.factory.controller.irc_identity.get('admin_channels', ()):
             self.join(i)
         for i in self.factory.controller.irc_identity['channels']:

@@ -9,6 +9,10 @@ irc_identity = {
         ),
         'line_rate': 2.0,
 		'default_channel': '#suckerserv',
+        'nickserv': {
+                'service_name': 'AuthServ@Services.GameSurge.net',
+                'password': 'Suckerbot',
+        },
     },
 }['gamesurge']
 
