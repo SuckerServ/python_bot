@@ -207,5 +207,6 @@ server['reload'] = f
 def f(server_write, args, **_):
     server_write('''\
                         code:server.clearbans()\
+                        sendmsg(cube2irc_colors(server.clearbans_message))\
                         ''')
 server['clearbans'] = f
