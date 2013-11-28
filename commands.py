@@ -12,7 +12,8 @@ server = {
 		      end\
 	'),
 	'restart': lambda server_write, **_: server_write('code:sendmsg("restarting server..."); server.restart_now()'),
-	'uptime': lambda server_write, **_: server_write('code:sendmsg("Uptime: " .. server.format_duration(server.uptime/1000))'),
+	'uptime': lambda server_write, **_: server_write('code:sendmsg("Uptime: " .. server.format_duration(server.uptime))'),
+	'info': lambda server_write, **_: server_write('code:sendmsg(string.format("Gamemode: %s Map: %s Players: %i Time left: %i Mastermode: %i", server.gamemode, server.map, server.playercount, server.timeleft, server.mastermode))')
 }
 
 def f(server_write, args, nickname, **_):
