@@ -117,7 +117,7 @@ def f(server_write, args, **_):
 	server_write('''\
 			code:local cn = tonumber('%s');\
 			if server.valid_cn(cn) then\
-				server.slay(cn)\
+				server.player_slay(cn)\
 				sendmsg("player slayed")\
 			else\
 				sendmsg("player not found")\
