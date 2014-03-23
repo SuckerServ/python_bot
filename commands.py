@@ -2,11 +2,11 @@ server = {
 	'ping': lambda server_write, **_: server_write('code:sendmsg("pong!")'),
 	'players': lambda server_write, **_: server_write('\
 		code:local msg = "" \
-			for p in server.gplayers() do \
+			for p in server.gclients() do \
 				if server.player_priv_code(p.cn) >= server.PRIV_ADMIN then \
-					msg = msg .. irc_color_orange(string.format("%s(%d)", p:name(), p.cn)) \
+					msg = msg .. irc_color_orange(string.format("%s(%d) ", p:name(), p.cn)) \
 				elseif server.player_priv_code(p.cn) >= server.PRIV_MASTER then \
-					msg = msg .. irc_color_green(string.format("%s(%d)", p:name(), p.cn)) \
+					msg = msg .. irc_color_green(string.format("%s(%d) ", p:name(), p.cn)) \
 				else \
 					msg = msg .. string.format("%s(%d) ", p:name(), p.cn) \
 				end \
